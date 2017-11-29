@@ -25,9 +25,6 @@ var myChart = new Chart(ctx, {
         datasets: [{
             label: ' °C',
             data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
-            ],
             borderColor: [
                 'rgba(255,99,132,1)'
             ],
