@@ -24,7 +24,7 @@ var myChart = new Chart(ctx, {
         labels: ['January', 'February', 'March', 'April', 'May', 'June'],
         datasets: [{
             label: ' °C',
-            data: [12, 19, 3, 5, 2, 3] /*,
+            data: [12, 19, 3, 5, 2, 3] ,
             borderColor: [
                 'rgba(255,99,132,1)'
             ],
@@ -44,7 +44,7 @@ var myChart = new Chart(ctx, {
                 'rgba(255,99,132,1)'
             ],
             pointBorderWidth:1,
-            pointRadius:2 */
+            pointRadius:2 
         }]
     },
     options: {
