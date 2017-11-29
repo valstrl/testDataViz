@@ -66,7 +66,8 @@ var myChart = new Chart(ctx, {
     options: option_test
 });
 
-/* var ctx2 = document.getElementById("temperatureChart2").getContext('2d');
+ var ctx2 = document.getElementById("temperatureChart2").getContext('2d');
+ var slider = document.getElementById('slider');
 
 rs = new RangeSliderChart({
 
@@ -75,11 +76,11 @@ rs = new RangeSliderChart({
   chartType: 'line',
   chartCTX: ctx2,
 
-  class: 'my-chart-ranger',
+  chartElement: slider,
   initial:[1,6]
-});*/
+});
 
-var slider = document.getElementById('slider');
+/*
 
 noUiSlider.create(slider, {
 	start: [20, 80],
@@ -88,7 +89,7 @@ noUiSlider.create(slider, {
 		'min': 0,
 		'max': 100
 	}
-});
+});*/
 /* d3.select('#slider').call(d3.slider().axis(true).value( [ 10, 25 ] ).on("slide", function(evt, value) {
   d3.select('#slidertextmin').text(value[ 0 ]);
   d3.select('#slidertextmax').text(value[ 1 ]);
