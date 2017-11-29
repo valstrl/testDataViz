@@ -17,7 +17,7 @@ var g = svg.append("g");
 d3.csv("data/output.csv", function(data) {
 });*/
 
-var ctx = document.getElementById("tempratureChart");
+var ctx = document.getElementById("temperatureChart");
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
