@@ -76,7 +76,7 @@ rs = new RangeSliderChart({
   chartType: 'line',
   chartCTX: ctx2,
 
-  chartElement: slider,
+  /*chartElement: slider,*/
   initial:[1,6]
 });
 
