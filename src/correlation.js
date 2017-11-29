@@ -51,7 +51,7 @@ var myChart = new Chart(ctx, {
         scales: {
           xAxes: [{
                 type: 'category',
-                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                labels: ['January', 'February', 'March', 'April', 'May', 'June']
             }],
             yAxes: [{
                 ticks: {
