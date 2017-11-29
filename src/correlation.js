@@ -52,7 +52,7 @@ var myChart = new Chart(ctx, {
           xAxes: [{
                 type: 'category',
                 labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-            }]
+            }],
             yAxes: [{
                 ticks: {
                     beginAtZero:true
