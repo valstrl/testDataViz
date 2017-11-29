@@ -28,6 +28,7 @@ var myChart = new Chart(ctx, {
             borderColor: [
                 'rgba(255,99,132,1)'
             ],
+            backgroundColor:['rgba(255,99,132,0.2)'],
             borderWidth: 1,
             pointBackgroundColor:[
                 'rgba(255,99,132,1)',
@@ -44,7 +45,7 @@ var myChart = new Chart(ctx, {
                 'rgba(255,99,132,1)'
             ],
             pointBorderWidth:1,
-            pointRadius:2 
+            pointRadius:2
         }]
     },
     options: {
