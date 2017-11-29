@@ -21,26 +21,38 @@ var ctx = document.getElementById("temperatureChart");
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        /*labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],*/
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
         datasets: [{
             label: ' °C',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3, 5, 2, 3] /*,
             borderColor: [
                 'rgba(255,99,132,1)'
             ],
             borderWidth: 1,
             pointBackgroundColor:[
+                'rgba(255,99,132,1)',
+                'rgba(255,99,132,1)',
+                'rgba(255,99,132,1)',
+                'rgba(255,99,132,1)',
                 'rgba(255,99,132,1)'
             ],
             pointBorderColor:[
+                'rgba(255,99,132,1)',
+                'rgba(255,99,132,1)',
+                'rgba(255,99,132,1)',
+                'rgba(255,99,132,1)',
                 'rgba(255,99,132,1)'
             ],
             pointBorderWidth:1,
-            pointRadius:2
+            pointRadius:2 */
         }]
     },
     options: {
         scales: {
+          xAxes: [{
+                type: 'category',
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            }]
             yAxes: [{
                 ticks: {
                     beginAtZero:true
