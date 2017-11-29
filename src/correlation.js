@@ -66,7 +66,7 @@ var myChart = new Chart(ctx, {
     options: option_test
 });
 
- var ctx2 = document.getElementById("temperatureChart2").getContext('2d');
+/* var ctx2 = document.getElementById("temperatureChart2").getContext('2d');
 
 rs = new RangeSliderChart({
 
@@ -77,6 +77,17 @@ rs = new RangeSliderChart({
 
   class: 'my-chart-ranger',
   initial:[1,6]
+});*/
+
+var slider = document.getElementById('slider');
+
+noUiSlider.create(slider, {
+	start: [20, 80],
+	connect: true,
+	range: {
+		'min': 0,
+		'max': 100
+	}
 });
 /* d3.select('#slider').call(d3.slider().axis(true).value( [ 10, 25 ] ).on("slide", function(evt, value) {
   d3.select('#slidertextmin').text(value[ 0 ]);
