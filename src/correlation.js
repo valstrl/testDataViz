@@ -28,7 +28,7 @@ var myChart = new Chart(ctx, {
             borderColor: [
                 'rgba(255,99,132,1)'
             ],
-            backgroundColor:['rgba(255,99,132,0.2)'],
+            fill: false,
             borderWidth: 1,
             pointBackgroundColor:[
                 'rgba(255,99,132,1)',
