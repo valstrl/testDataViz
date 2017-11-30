@@ -29,8 +29,83 @@ noUiSlider.create(slider, {
  range: {
    'min': 0,
    'max':months.length -1,
- }
+ },
+  pips: {
+    mode: 'values',
+		values: [...Array(months.length).keys()],
+    density: 25,
+    stepped: true
+	}
 });
+
+// Alter the pip labels (and modify/add the middle one)
+$('#slider > div.noUi-pips.noUi-pips-horizontal > div:nth-child(2)').text(months[0]);
+$('#slider > div.noUi-pips.noUi-pips-horizontal > div:nth-child(4)').text(months[1]);
+$('#slider > div.noUi-pips.noUi-pips-horizontal > div:nth-child(6)').text(months[2]);
+$('#slider > div.noUi-pips.noUi-pips-horizontal > div:nth-child(8)').text(months[3]);
+$('#slider > div.noUi-pips.noUi-pips-horizontal > div:nth-child(10)').text(months[4]);
+$('#slider > div.noUi-pips.noUi-pips-horizontal > div:nth-child(12)').text(months[5]);
+
+  /*.removeClass('noUi-marker-normal')
+  .addClass('noUi-marker-large')
+  .append('<div class="noUi-value noUi-value-horizontal noUi-value-large" style="left: 50.00000%">Fair</div>');
+$('slider > div.noUi-pips.noUi-pips-horizontal > div:nth-child(7)').text(months[months.length-1]);*/
+
+
+// Slider event handlers
+slider.noUiSlider.on('slide', function (values, handle) {
+  // Array of score names
+  var rating_names = months;
+
+  // Get rounded value
+  var value = Math.round(values[handle]);
+
+  // Get score name to show in tool-tip
+  var text = rating_names[value - 1];
+
+  // Set hidden field to value
+  $('#rating_id').val(value);
+
+
+  // Show score name in tool-tip
+  $('#rating-tip').text(text).removeClass('hidden');
+});
+
+
+// Function to hide the tool-tip again after a timeout
+slider.noUiSlider.on('change', function (values, handle) {
+  setTimeout(function () {
+    $('#rating-tip').addClass('hidden');
+  }, 500);
+});
+
+
+/*import { NouiFormatter } from "lib/ng2-nouislider";*/
+
+/*export class MyFormatter implements DefaultFormatter {
+  private strings: string[] = [
+    'abc', 'dfg', 'hij', 'klm', 'nop', 'qrs'
+  ];
+
+  to(value: number): string {
+    value = Math.round(value);
+    if (value < 0) {
+      value = 0;
+    }
+    if (value >= this.strings.length) {
+      value = this.strings.length - 1;
+    }
+    return this.strings[value];
+  }
+
+  from(value: string): number {
+    let result = this.strings.indexOf(value);
+    return result == -1 ? 0 : result;
+  }
+}*/
+
+
+
 
    var data_test = {
        labels: months,
@@ -47,9 +122,11 @@ noUiSlider.create(slider, {
                'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
+               'rgba(255,99,132,1)',
                'rgba(255,99,132,1)'
            ],
            pointBorderColor:[
+               'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
@@ -76,9 +153,11 @@ noUiSlider.create(slider, {
                'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
+               'rgba(99,255,132,1)',
                'rgba(99,255,132,1)'
            ],
            pointBorderColor:[
+               'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
@@ -138,9 +217,11 @@ slider.noUiSlider.on('update', function( values, handle ) {
                'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
+               'rgba(255,99,132,1)',
                'rgba(255,99,132,1)'
            ],
            pointBorderColor:[
+               'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
                'rgba(255,99,132,1)',
@@ -167,9 +248,11 @@ slider.noUiSlider.on('update', function( values, handle ) {
                'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
+               'rgba(99,255,132,1)',
                'rgba(99,255,132,1)'
            ],
            pointBorderColor:[
+               'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
                'rgba(99,255,132,1)',
