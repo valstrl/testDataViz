@@ -200,7 +200,9 @@ slider.noUiSlider.on('change', function (values, handle) {
 var months_selected;
 slider.noUiSlider.on('update', function( values, handle ) {
 	 months_id_selected= slider.noUiSlider.get();;
-   /*console.log(months_id_selected);*/
+   months_id_selected[1]= Number(months_id_selected[1]) + 1;
+   console.log(months_id_selected);
+   console.log(months.slice(months_id_selected[0],months_id_selected[1]));
 
    var data_test = {
        labels: months.slice(months_id_selected[0],months_id_selected[1]),
