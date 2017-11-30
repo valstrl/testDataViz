@@ -48,7 +48,7 @@ slider.noUiSlider.on('update', function( values, handle ) {
    d3.select("#panel")
              .append("canvas")
                .attr("id",idLineChart_temperature);
-   makeLineChart(temperature, months, months_id_selected, color_temperature, label_temperature, idLineChart_temperature)
+   makeLineChart(temperature, months, months_id_selected, color_temperature, label_temperature, idLineChart_temperature,'Temperature [°C]')
 
    // function create graph for temperatureChart
    color_co2='rgba(99,255,132,1)';
@@ -57,11 +57,11 @@ slider.noUiSlider.on('update', function( values, handle ) {
    d3.select("#panel")
              .append("canvas")
                .attr("id",idLineChart_co2);
-   makeLineChart(co2, months, months_id_selected, color_co2, label_co2, idLineChart_co2)
+   makeLineChart(co2, months, months_id_selected, color_co2, label_co2, idLineChart_co2,'CO2 Emmissions [kt]')
 
 });
 
-function makeLineChart(dataset, months, months_id_selected, color, label, idLineChart){
+function makeLineChart(dataset, months, months_id_selected, color, label, idLineChart,title){
 var data = {
     labels: months.slice(months_id_selected[0],months_id_selected[2]),
     datasets: [{
@@ -92,6 +92,13 @@ var data = {
 };
 
 var option = {
+    legend: {
+          display: false
+       },
+    title: {
+          display: true,
+          text: title
+      },
     scales: {
       xAxes: [{
             type: 'category',
